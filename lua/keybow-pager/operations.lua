@@ -5,7 +5,7 @@ operations = {}
 function operations.boilerplate(page, key)
     spotlight("terminal")
     keybow.tap_enter()
-    keybow.text("Developer&keybow/boilerplate/manager&shell&boilerplate.sh " .. page .. " " .. key)
+    keybow.text("Developer&kezbow/boilerplate/manager&shell&boilerplate.sh " .. page .. " " .. key)
     keybow.tap_enter()
     keybow.sleep(500)
     keybow.text("exit")

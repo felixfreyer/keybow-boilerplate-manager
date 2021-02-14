@@ -25,7 +25,7 @@ Thanks to stefanoborini for his project [keybow-pager](https://github.com/stefan
 The original Pimoroni Keybow firmware must be installed. After that the content of the lua directory needs to be copied to the root directory of the SD card.
 
 ### Mac Software
-By default, the shell script needs to be stored in the directory Developer/keybow-boilerplate-manager/shell/ on your Mac. To change this, just replace the path in the operations.lua file. Since the keybow is recognized as a hid device with qwerty layout, i needed to adjust the path string for my german qwertz keyboard layout. If you use a US/UK layout, make sure you adjust the path string ( & is /  and - is / ).
+By default, the shell script needs to be stored in the directory Developer/keybow-boilerplate-manager/shell/ on your Mac. To change this, just replace the path in the operations.lua file. Since the keybow is recognized as a hid device with qwerty layout, i needed to adjust the path string for my german qwertz keyboard layout. If you use a US/UK layout, make sure you adjust the path string ( & is /  and - is /  an y is z).
 
 The web interface can be run on MAMP and the required database sql file can be imported with phpMyAdmin.
 

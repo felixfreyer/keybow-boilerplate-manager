@@ -3,9 +3,11 @@ Feb 14th, 2021
 
 
 ![](https://github.com/felixfreyer/keybow-boilerplate-manager/raw/main/images/keybow.jpg)
+
 **Figure 1: Keybow**
 
 ![](https://github.com/felixfreyer/keybow-boilerplate-manager/raw/main/images/keybow-boilerplate-manager-1.jpg)
+
 **Figure 2: Keybow Boilerplate Manager**
 
 
@@ -37,9 +39,11 @@ Navigation is done by the keyboard arrow keys as well as the enter key.
 The website popup is automatically focussed and can be dismissed by pressing escape.
 
 ![](https://github.com/felixfreyer/keybow-boilerplate-manager/raw/main/images/keybow-boilerplate-manager-2.jpg)
+
 **Figure 3: Keybow Boilerplate Manager**
 
 ![](https://github.com/felixfreyer/keybow-boilerplate-manager/raw/main/images/keybow-boilerplate-manager-3.jpg)
+
 **Figure 4: Keybow Boilerplate Manager**
 
 

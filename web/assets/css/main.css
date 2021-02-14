@@ -1,0 +1,202 @@
+body {
+    background-color: #0f1724 !important;
+    color: #afafaf !important;
+    padding-top: 96px;
+    padding-bottom: 32px;
+}
+
+.bg-dark {
+    background: rgb(7, 13, 23) !important;
+    box-shadow: rgba(0, 255, 255, 0.45) 0px 1px 5px 0px;
+}
+
+.table-dark {
+    background: rgb(7, 13, 23) !important;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-color: rgb(0 233 239 / 16%);
+}
+
+tbody td, 
+tbody th {
+    color: #afafaf !important;
+}
+
+.navbar {
+    margin-bottom: 1.5rem;
+    z-index: 998;
+}
+
+#navbarSupportedContent .nav-item a {
+    color: #afafaf;
+    text-transform: uppercase;
+}
+#navbarSupportedContent .nav-item.active a {
+    color: rgb(17, 236, 229);
+}
+
+.visible {
+    display: block !important;
+}
+
+.content {
+    display: none;
+}
+
+.box {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+tr.content-row.row-selected th,
+tr.content-row.row-selected td.col-selected {
+    color: rgb(17, 236, 229) !important;
+}
+
+.add {
+    padding-left: .75rem;
+}
+
+.add-selected {
+    color: rgb(17, 236, 229) !important;
+}
+
+i.fas.fa-file-code,
+i.far.fa-clipboard,
+i.far.fa-trash-alt,
+i.fas.fa-sort {
+    display: none;
+}
+
+tr.content-row.row-selected i.fas.fa-file-code,
+tr.content-row.row-selected i.far.fa-clipboard,
+tr.content-row.row-selected i.far.fa-trash-alt,
+tr.content-row.row-selected i.fas.fa-sort {
+    display: unset;
+}
+
+.glow {
+    position: absolute;
+    bottom: -2px;
+    height: 1px;
+    background: rgb(17, 236, 229);
+    box-shadow: rgb(17, 236, 229) 0px 0px 6px 0.7px;
+}
+
+.blink {
+    animation: blink-animation 7s steps(50, start) infinite;
+    -webkit-animation: blink-animation 7s steps(50, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.modal-content {
+    background-color: #0f1724;
+    border: 1px solid rgba(17, 236, 229, 0.5);
+    border-radius: 0;
+}
+
+.modal-title {
+    color: rgb(17, 236, 229);
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-header {
+    border-bottom: 0px solid rgba(17, 236, 229, 0.5);
+}
+.modal-footer {
+    border-top: 0px solid rgba(17, 236, 229, 0.5);
+    margin-top: -1rem;
+    padding: 1rem 0;
+}
+.modal-footer>* {
+    margin: 0;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    color: rgba(17, 236, 229, 1);
+    background-color: unset;
+    border-color: transparent;
+    border-radius: 0;
+    margin-right: auto;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active {
+    color: rgba(17, 236, 229, 1);
+    background-color: unset;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+button:hover, button:focus, button:active, button.active,
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active {
+    box-shadow: 0 0 0 1px rgba(17, 236, 229, 1);
+    border-radius: 0;
+    outline: 1px;
+}
+
+.form-control:hover, .form-control:focus, .form-control:active {
+    border-color: #0f1724 !important;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px rgba(17, 236, 229, 1);
+}
+
+.close, .close:hover {
+    color: rgb(17, 236, 229);
+    text-shadow: none;
+}
+
+input[type="text"], textarea, .form-control {
+    color: #afafaf !important;
+    background-color : #0f1724 !important; 
+    border-color: rgba(17, 236, 229, 0.5);
+    border-radius: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #afafaf !important;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #afafaf !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #afafaf !important;
+}
+
+.alert {
+    padding: 4px 1.25rem;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0;
+    z-index: 999;
+}
+
+.alert-success {
+    color: #000000;
+    background-color: rgba(33, 258, 174, 1);
+    border-color: rgba(33, 258, 174, 1);
+}
+
+.alert-danger {
+    color: #ffffff;
+    background-color: #ff3547;
+    border-color: #ff3547;
+}

@@ -6,8 +6,8 @@ require_once __DIR__ . '/Database.php';
     protected $category;
 
 	public function __construct($category) {
-        $this->category = $category;
-        $this->db = new Database();
+	$this->category = $category;
+	$this->db = new Database();
 	}
 
     public function getCategory() {

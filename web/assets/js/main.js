@@ -382,8 +382,8 @@ function reloadModals() {
 function editBoilerplate(i, id) {
     var category = getCategory();
     if (validateBoilerplateEdit(i)) {
-        var boilerplate_name = $('#' + category + '_boilerplate_name_' + i).val();
-        var boilerplate_code = $('#' + category + '_boilerplate_code_' + i).val();
+        var boilerplate_name = encodeURIComponent($('#' + category + '_boilerplate_name_' + i).val());
+        var boilerplate_code = encodeURIComponent($('#' + category + '_boilerplate_code_' + i).val());
         jQuery.ajax({
             url: "./assets/php/boilerplate_edit.php",
             data:'boilerplate_name='+boilerplate_name+'&boilerplate_code='+boilerplate_code+'&boilerplate_category='+category+'&boilerplate_id='+id,
@@ -412,7 +412,7 @@ function saveBoilerplate() {
     if (validateBoilerplate()) {
         jQuery.ajax({
             url: "./assets/php/boilerplate_save.php",
-            data:'boilerplate_name='+$('#' + category + '_boilerplate_name').val()+'&boilerplate_code='+$('#' + category + '_boilerplate_code').val()+'&boilerplate_category='+ category,
+            data:'boilerplate_name='+encodeURIComponent($('#' + category + '_boilerplate_name').val())+'&boilerplate_code='+encodeURIComponent($('#' + category + '_boilerplate_code').val())+'&boilerplate_category='+ category,
             type: "POST",
             success: function() {
                 $('#success-alert-saved').fadeTo(2000, 500).slideUp(500, function() {

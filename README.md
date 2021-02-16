@@ -63,6 +63,5 @@ The website popup is automatically focussed and can be dismissed by pressing esc
 
 
 ## TBD
-- Modal keyboard navigation is currently done by arrow up / down. Arrow left / right should be implemented for convenience and intuitive navigation.
 - Disable enter and esc key on modal inputs and text areas.
 - Possibility to add, edit and sort categories.

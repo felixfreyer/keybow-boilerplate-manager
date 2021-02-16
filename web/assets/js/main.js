@@ -169,14 +169,7 @@ function keyDownPressed() {
                 document.getElementById(getCategory() + '_boilerplate_save').focus();
             }
         } else if (isRowsSelected() && modal) {
-            var mod_num = $(modal).attr('data-target').split("_")[1];
-            if (modal[0].className == 'far fa-trash-alt') {
-                var mod_close = document.getElementById(getCategory() + '_boilerplate_remove_close_' + mod_num);
-                var mod_save = document.getElementById(getCategory() + '_boilerplate_remove_save_' + mod_num);
-            } else {
-                var mod_close = document.getElementById(getCategory() + '_boilerplate_edit_close_' + mod_num);
-                var mod_save = document.getElementById(getCategory() + '_boilerplate_edit_save_' + mod_num);
-            }
+            [mod_close, mod_save, mod_num] = getModalButtons(modal);
             if (document.activeElement === document.getElementById(getCategory() + '_boilerplate_name_' + mod_num)) {
                 document.getElementById(getCategory() + '_boilerplate_code_' + mod_num).focus();
             } else if (document.activeElement === document.getElementById(getCategory() + '_boilerplate_code_' + mod_num)) {
@@ -192,14 +185,7 @@ function keyUpPressed() {
     if(isRowsSelected()) {
         var modal = $('.col-selected').find('i');
         if (isModSelected() && modal) {
-            var mod_num = $(modal).attr('data-target').split("_")[1];
-            if (modal[0].className == 'far fa-trash-alt') {
-                var mod_close = document.getElementById(getCategory() + '_boilerplate_remove_close_' + mod_num);
-                var mod_save = document.getElementById(getCategory() + '_boilerplate_remove_save_' + mod_num);
-            } else {
-                var mod_close = document.getElementById(getCategory() + '_boilerplate_edit_close_' + mod_num);
-                var mod_save = document.getElementById(getCategory() + '_boilerplate_edit_save_' + mod_num);
-            }
+            [mod_close, mod_save, mod_num] = getModalButtons(modal);
             if (document.activeElement === mod_save) {
                 mod_close.focus();
             } else if (document.activeElement === mod_close) {
@@ -237,16 +223,36 @@ function keyUpPressed() {
 function keyLeftPressed() {
     if (isNavSelected()) {
         setPositionPrevNav();
-    } else if (isRowsSelected() && !isModSelected()) {
-        setPositionPrevCol();
+    } else if (isRowsSelected()) {
+        var modal = $('.col-selected').find('i');
+        if (isModSelected() && modal) {
+            [mod_close, mod_save, mod_num] = getModalButtons(modal);
+            if (document.activeElement === mod_save) {
+                mod_close.focus();
+            }
+        } else {
+            setPositionPrevCol();
+        }
+    } else if (isAddSelected() && isModSelected() && (document.activeElement === document.getElementById(getCategory() + '_boilerplate_save'))) {
+        document.getElementById(getCategory() + '_boilerplate_close').focus();
     }
 }
 
 function keyRightPressed() {
     if (isNavSelected()) {
         setPositionNextNav();
-    } else if (isRowsSelected() && !isModSelected()) {
-        setPositionNextCol();
+    } else if (isRowsSelected()) {
+        var modal = $('.col-selected').find('i');
+        if (isModSelected() && modal) {
+            [mod_close, mod_save, mod_num] = getModalButtons(modal);
+            if (document.activeElement === mod_close) {
+                mod_save.focus();
+            }
+        } else {
+            setPositionNextCol();
+        }
+    } else if (isAddSelected() && isModSelected() && (document.activeElement === document.getElementById(getCategory() + '_boilerplate_close'))) {
+        document.getElementById(getCategory() + '_boilerplate_save').focus();
     }
 }
 
@@ -483,9 +489,8 @@ function updateBoilerplate(boilerplate_name, i) {
 }
 
 function copyToClipboard(i) {
-    var str = document.getElementById(getCategory() + '_boilerplate_code_' + i).value;
     const el = document.createElement('textarea');
-    el.value = str;
+    el.value = document.getElementById(getCategory() + '_boilerplate_code_' + i).value;
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
@@ -535,4 +540,16 @@ function htmlToElements(html) {
 
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function getModalButtons(modal) {
+    var mod_num = $(modal).attr('data-target').split("_")[1];
+    if (modal[0].className == 'far fa-trash-alt') {
+        var mod_close = document.getElementById(getCategory() + '_boilerplate_remove_close_' + mod_num);
+        var mod_save = document.getElementById(getCategory() + '_boilerplate_remove_save_' + mod_num);
+    } else {
+        var mod_close = document.getElementById(getCategory() + '_boilerplate_edit_close_' + mod_num);
+        var mod_save = document.getElementById(getCategory() + '_boilerplate_edit_save_' + mod_num);
+    }
+    return [mod_close, mod_save, mod_num];
 }
